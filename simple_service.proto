@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "status-unknown/grpcstatusunknown";
+
+package grpcstatusunknown;
+
+message SimpleRequest {
+    string text = 1;
+}
+
+message SimpleResponse {
+    string text = 1;
+}
+
+service SimpleService {
+	rpc Subscribe (SimpleRequest) returns (stream SimpleResponse);
+}
